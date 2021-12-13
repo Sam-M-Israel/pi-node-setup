@@ -8,10 +8,10 @@ Wants           = network-online.target
 After           = network-online.target
 
 [Service]
-User            = replaceUsername
-Group		        = replaceUsername
-WorkingDirectory= /home/replaceUsername/
-ExecStart	      = /home/replaceUsername/tezos/tezos-node run --net-addr 127.0.0.1:9733 --rpc-addr 127.0.0.1:8733 --data-dir /home/replaceUsername/tezos-new-node
+User            = pi
+Group		        = pi
+WorkingDirectory= /home/pi/
+ExecStart	      = /home/pi/tezos/tezos-node run --net-addr 127.0.0.1:9733 --rpc-addr 127.0.0.1:8733 --data-dir /home/pi/tezos-new-node
 Restart         = always
 
 [Install]

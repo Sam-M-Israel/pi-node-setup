@@ -8,11 +8,11 @@ BindsTo		      = tezos-node.service
 After           = tezos-node.service
 
 [Service]
-User            = replaceUsername
-Group		        = replaceUsername
-WorkingDirectory= /home/replaceUsername/
+User            = pi
+Group		        = pi
+WorkingDirectory= /home/pi/
 ExecStartPre	  = /bin/sleep 1
-ExecStart       = /home/replaceUsername/tezos/tezos-accuser-011-PtHangz2 run
+ExecStart       = /home/pi/tezos/tezos-accuser-011-PtHangz2 run
 Restart         = always
 
 [Install]

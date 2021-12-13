@@ -11,3 +11,8 @@ Run the following terminal commands in order
 
 
 Note: You can use the `restart-all.sh` and `stop-all.sh` files to restart/stop the services when you need to.
+
+
+Helpful links:
+
+1. [Coincashew](https://www.coincashew.com/coins/overview-xtz/guide-how-to-setup-a-baker/monitoring-and-autostart)
