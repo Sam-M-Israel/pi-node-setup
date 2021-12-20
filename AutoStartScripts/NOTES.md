@@ -10,7 +10,7 @@ Run the following terminal commands in order
    5. `./index.sh`
 
 
-Note: You can use the `restart-all.sh` and `stop-all.sh` files to restart/stop the services when you need to.
+**Note:** You can use the `restart-all.sh` and `stop-all.sh` files to restart/stop the services when you need to.
 
 
 Helpful links:

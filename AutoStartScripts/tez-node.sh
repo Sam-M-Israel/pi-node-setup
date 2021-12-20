@@ -11,7 +11,7 @@ After           = network-online.target
 User            = pi
 Group		        = pi
 WorkingDirectory= /home/pi/
-ExecStart	      = /home/pi/tezos/tezos-node run --net-addr 127.0.0.1:9733 --rpc-addr 127.0.0.1:8733 --data-dir /home/pi/tezos-new-node
+ExecStart	      = /home/pi/tezos/tezos-node run --net-addr 127.0.0.1:9733 --rpc-addr 127.0.0.1:8733 --data-dir ~/tezos-new-node
 Restart         = always
 
 [Install]
