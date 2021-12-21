@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cat > /etc/systemd/system/tezos-accuser.service << EOF
 # The Tezos Accuser service (part of systemd)
 # file: /etc/systemd/system/tezos-accuser.service

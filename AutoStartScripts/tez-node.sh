@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cat > /etc/systemd/system/tezos-node.service << EOF
 # The Tezos Node service (part of systemd)
 # file: /etc/systemd/system/tezos-node.service

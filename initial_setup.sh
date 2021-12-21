@@ -41,7 +41,11 @@ eval $(opam env)
 make
 echo -e "\n****Done compiling sources****\n"
 
-# [optional setup]
 export PATH=~/tezos:$PATH
 source ./src/bin_client/bash-completion.sh
 export TEZOS_CLIENT_UNSAFE_DISABLE_DISCLAIMER=Y
+
+echo -e "\n**** Generate Node Identity ****\n This can take a few minutes, please be patient..."
+./tezos-node identity generate 26.
+
+

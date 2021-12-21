@@ -1,6 +1,6 @@
 # Setting up Auto-start & monitoring
 
-These files are currently set for the Hangzau2 Protocol
+These files are currently set for the Hangzhou2 Protocol
 ####AutoStart
 Run the following terminal commands in order
    1. `./tez-node.sh`

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cat > /etc/systemd/system/tezos-baker.service << EOF
 # The Tezos Baker service (part of systemd)
 # file: /etc/systemd/system/tezos-baker.service

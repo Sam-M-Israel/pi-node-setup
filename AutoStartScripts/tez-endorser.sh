@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cat > /etc/systemd/system/tezos-endorser.service << EOF
 # The Tezos Endorser service (part of systemd)
 # file: /etc/systemd/system/tezos-endorser.service
