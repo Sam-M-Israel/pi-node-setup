@@ -14,7 +14,7 @@ User            = pi
 Group		        = pi
 WorkingDirectory= /home/pi/
 ExecStartPre	  = /bin/sleep 1
-ExecStart       = /home/pi/tezos/tezos-baker-011-PtHangz2 --endpoint http://127.0.0.1:8733 run with local node ~/tezos-new-node ledger_pi && export TEZOS_LOG="* -> debug"
+ExecStart       = /home/pi/tezos/tezos-baker-011-PtHangz2 --endpoint http://127.0.0.1:8732 run with local node ~/tezos-node ledger_pi && export TEZOS_LOG="* -> debug"
 Restart         = always
 
 [Install]
