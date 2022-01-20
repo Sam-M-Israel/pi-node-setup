@@ -3,12 +3,12 @@
 echo -e "\n****Starting setup, installing required libraries ****\n"
 
 echo "Moving to home directory..."
-cd $HOME/myssd/ || exit
+cd ~/myssd/ || exit
 
 echo -e "\n****Installing Rust ****\n"
 wget https://sh.rustup.rs/rustup-init.sh && chmod +x rustup-init.sh &&
 ./rustup-init.sh --profile minimal --default-toolchain 1.52.1 -y &&
-source $HOME/myssd/.cargo/env
+source ~/myssd/.cargo/env
 echo -e "\n****Done installing Rust ****\n"
 
 echo -e "\n****Installing ZCash Params ****\n"
@@ -17,7 +17,7 @@ chmod +x fetch-params.sh &&
 ./fetch-params.sh
 echo -e "\n****Done installing ZCash Params ****\n"
 
-cd $HOME/myssd/ || exit
+cd ~/myssd/ || exit
 echo -e "\n****Installing Opam ****\n"
 
 wget https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh && sudo chmod +x install.sh
