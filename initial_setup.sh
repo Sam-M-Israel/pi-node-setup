@@ -3,12 +3,12 @@
 echo -e "\n****Starting setup, installing required libraries ****\n"
 
 echo "Moving to home directory..."
-cd $HOME
+cd $HOME/myssd/ || exit
 
 echo -e "\n****Installing Rust ****\n"
 wget https://sh.rustup.rs/rustup-init.sh && chmod +x rustup-init.sh &&
 ./rustup-init.sh --profile minimal --default-toolchain 1.52.1 -y &&
-source $HOME/.cargo/env
+source $HOME/myssd/.cargo/env
 echo -e "\n****Done installing Rust ****\n"
 
 echo -e "\n****Installing ZCash Params ****\n"
@@ -17,7 +17,7 @@ chmod +x fetch-params.sh &&
 ./fetch-params.sh
 echo -e "\n****Done installing ZCash Params ****\n"
 
-cd $HOME || exit
+cd $HOME/myssd/ || exit
 echo -e "\n****Installing Opam ****\n"
 
 wget https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh && sudo chmod +x install.sh
@@ -28,7 +28,7 @@ sudo chmod a+x /usr/local/bin/opam
 # sudo cp opam-2.0.5-x86_64-linux /usr/local/bin/opam && sudo chmod a+x /usr/local/bin/opam
 echo -e "\n****Done installing Opam, now pulling tezos ****\n"
 git clone https://gitlab.com/tezos/tezos.git
-cd tezos || exit
+cd tezos
 git checkout latest-release
 
 echo -e "\n****Installing Tezos Dependencies ****\n"
@@ -41,7 +41,7 @@ eval $(opam env)
 make
 echo -e "\n****Done compiling sources****\n"
 
-export PATH=~/tezos:$PATH
+export PATH=~/myssd/tezos:$PATH
 source ./src/bin_client/bash-completion.sh
 export TEZOS_CLIENT_UNSAFE_DISABLE_DISCLAIMER=Y
 
