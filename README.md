@@ -9,16 +9,16 @@ running ```sudo chmod u+x filename.sh```.
 
 Now that's done, here are the steps you need to follow:
 1. Run initial_setup.sh: ```./intial_setup.sh```
-2. [Download and import the latest Tezos snapshot](#Downloading and importing a snapshot)
-3. [Starting the Node](#Starting the Node)
-4. [Setting up our Ledger Nano S](#Setting up our Ledger Nano S)
-5. [Registering as a baker](#Registering as a baker)
-6. [Getting the Bakery up and running](#Getting the Bakery up and running)
-7. [Setting up auto-restart and monitoring for your node](#Setting up auto-restart and monitoring)
+2. [Download and import the latest Tezos snapshot](#downloading-and-importing-a-snapshot)
+3. [Starting the Node](#starting-the-node)
+4. [Setting up our Ledger Nano S](#setting-up-our-ledger-nano-s)
+5. [Registering as a baker](#registering-as-a-baker)
+6. [Getting the Bakery up and running](#getting-the-bakery-up-and-running)
+7. [Setting up auto-restart and monitoring for your node](#setting-up-auto-restart-and-monitoring)
 
 
 
-##Downloading and importing a snapshot
+## Downloading and importing a snapshot
 I prefer to get the snapshots from [mainnet.xtz-shots.io](https://mainnet.xtz-shots.io/). Scroll down to the Rolling snapshot section of the page. The command you need to run in your terminal looks like:
 ```
 wget https://mainnet.xtz-shots.io/tezos-mainnet-1959969.rolling
@@ -27,7 +27,7 @@ tezos-node snapshot import tezos-mainnet-1959969.rolling --block BM4MFDJV3tPnRUx
 
 Where the numbers `1959969` and blockhash `BM4MFDJV3tPnRUxgrcsWUNNoYNSaiZCgEV64LJLxNwBQRLApgQz` aren't necessarily the same.
 
-##Starting the Node
+## Starting the Node
 After the Snapshot download, we are going to sync our node with that of the rest of the blockchain. For that to happen we need to get all of the blocks that weren't in the snapshot we downloaded.  
 To do that, run `./node_start.sh` and you can see its progress by running `tail -f tezos.log` in a separate terminal
 
@@ -36,7 +36,7 @@ Now, you might wonder how we check if our node is ready. We will know its ready 
 While we are waiting for our Node to be bootstrapped, lets setup our Ledger Nano S.
 
 
-##Setting up our Ledger Nano S
+## Setting up our Ledger Nano S
 We are using the ledger as the wallet for our baking and for that to happen, we need to set it up. So yalla:
 
 #### Setting up ledger live and wallet on your home computer (not the Raspberry Pi)
@@ -78,7 +78,7 @@ where ledger_pi is the name you have decided to give your bakery.
 ```./tezos-client list known addresses```  
 and you should see your baker's account name and public address.  
   
-###Registering as a baker
+## Registering as a baker
 Please note, while you are baking, you are required to keep your ledger wallet unlocked and open to the Tezos Baking app. If your ledger is off for some reason, then you will miss your baking slot during the time that it was off.  
 1. Unlock your ledger and navigate to the Tezos Baking app
 2. Open a new terminal and navigate to the ```tezos``` directory
@@ -91,7 +91,7 @@ Please note, while you are baking, you are required to keep your ledger wallet u
 This command will register your ledger and Pi as a bakery.
 
 
-###Getting the Bakery up and running
+## Getting the Bakery up and running
 Here we will be running multiple scripts, each in separate terminals. They will get the bakery, endorser, and accuser up and running. If your node still isn't bootstrapped, don't worry. It usually takes a couple of hours, depending on the snapshot. Once your node is bootstrapped, you should proceed with the following:
 1. Firstly, check and make sure that your node is still running. If not, re-run `./node_start.sh`
 2. Open up 3 more terminals/CLIs that you will have dedicated for the following 3 commands (I like to name the terminals/CLIs after their specified command: **Bakery**, **Endorser**, **Accuser**), one in each.
@@ -102,11 +102,11 @@ Here we will be running multiple scripts, each in separate terminals. They will 
 7. Yalla, so you are all good to bake.
 
 
-###Setting up auto-restart and monitoring
+## Setting up auto-restart and monitoring
 So, your bakery is up and running, Mazal Tov! What happens when there is a power outage, internet cuts out, or something causes your Pi to restart suddenly and you aren't home to deal with it? Don't worry. I got you :)  
 
 
-#####Helpful links:
+##### Helpful links:
 1. [Tezos baking slack](https://tezos-kiln.org/joinbakingslack)
 2. [r/Tezos](https://www.reddit.com/r/tezos/)
 3. [Coincashew](https://www.coincashew.com/coins/overview-xtz/guide-how-to-setup-a-baker/monitoring-and-autostart)
