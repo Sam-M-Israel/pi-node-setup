@@ -1,9 +1,9 @@
-# pi-node-setup
-Setup script and instructions for a Tezos Node &amp; Bakery on Raspberry Pi
-
+# Tezos Node and Bakery setup for a Raspberry Pi
 
 Welcome!
+This is a SDK for setting up a Tezos Node and Bakery on a Raspberry Pi.
 
+First off, this SDK assumes that you already have a Raspberry Pi up and running with a 64-bit OS.
 To get started, you have to make the scripts you will run to be executable. That simply requires
 running ```sudo chmod u+x filename.sh```.
 
@@ -22,7 +22,7 @@ Now that's done, here are the steps you need to follow:
 I prefer to get the snapshots from [mainnet.xtz-shots.io](https://mainnet.xtz-shots.io/). Scroll down to the Rolling snapshot section of the page. The command you need to run in your terminal looks like:
 ```
 wget https://mainnet.xtz-shots.io/tezos-mainnet-1959969.rolling
-tezos-node snapshot import tezos-mainnet-1959969.rolling --block BM4MFDJV3tPnRUxgrcsWUNNoYNSaiZCgEV64LJLxNwBQRLApgQz
+./tezos-node snapshot import tezos-mainnet-1959969.rolling --block BM4MFDJV3tPnRUxgrcsWUNNoYNSaiZCgEV64LJLxNwBQRLApgQz
 ```
 
 Where the numbers `1959969` and blockhash `BM4MFDJV3tPnRUxgrcsWUNNoYNSaiZCgEV64LJLxNwBQRLApgQz` aren't necessarily the same.
@@ -96,14 +96,14 @@ Here we will be running multiple scripts, each in separate terminals. They will 
 1. Firstly, check and make sure that your node is still running. If not, re-run `./node_start.sh`
 2. Open up 3 more terminals/CLIs that you will have dedicated for the following 3 commands (I like to name the terminals/CLIs after their specified command: **Bakery**, **Endorser**, **Accuser**), one in each.
 3. Run: ```cd tezos && ./tezos-baker-011-PtHangz2 run with local node ~/tezos-node ledger_pi``` (where ledger_pi is replaced with the name you gave your bakery)
-4. Run: ```cd tezos && ./tezos-endorser-011-PtHangz2 --endpoint http://127.0.0.1:8732 run ledger_pi``` (where ledger_pi is replaced with the name you gave your bakery)
-5. Run: ```cd tezos && ./tezos-accuser-011-PtHangz2 --endpoint http://127.0.0.1:8732 run``` (where ledger_pi is replaced with the name you gave your bakery)
+4. Run: ```cd tezos && ./tezos-endorser-011-PtHangz2 run ledger_pi``` (where ledger_pi is replaced with the name you gave your bakery)
+5. Run: ```cd tezos && ./tezos-accuser-011-PtHangz2 run``` (where ledger_pi is replaced with the name you gave your bakery)
 6. If your node is bootstrapped (fully synced up) then you should see outputs of baking printouts, ```endorser activated```, ```accuser activated``` from their respective terminals. If not and your node **IS** bootstrapped, then try to debug and make sure you did all the steps correctly and in order.
-7. Yalla, so you are all good to bake.
+7. Yalla, you are all good to bake.
 
 
 ## Setting up auto-restart and monitoring
-So, your bakery is up and running, Mazal Tov! What happens when there is a power outage, internet cuts out, or something causes your Pi to restart suddenly and you aren't home to deal with it? Don't worry. I got you :)  
+[Coming Soon] So, your bakery is up and running, Congratz! What happens when there is a power outage, internet cuts out, or something causes your Pi to restart suddenly and you aren't home to deal with it? Don't worry. I got you :)  
 
 
 ##### Helpful links:

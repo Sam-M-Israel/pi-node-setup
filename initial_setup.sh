@@ -24,8 +24,7 @@ wget https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh && sud
 echo -e "\n**** When promoted, press enter to install opam in the /usr/local/bin directory ****\n"
 ./install.sh --version 2.0.9
 sudo chmod a+x /usr/local/bin/opam
-# wget https://github.com/ocaml/opam/releases/download/2.0.5/opam-2.0.5-x86_64-linux &&
-# sudo cp opam-2.0.5-x86_64-linux /usr/local/bin/opam && sudo chmod a+x /usr/local/bin/opam
+
 echo -e "\n****Done installing Opam, now pulling tezos ****\n"
 git clone https://gitlab.com/tezos/tezos.git
 cd tezos || exit
