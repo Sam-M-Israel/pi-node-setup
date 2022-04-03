@@ -1,4 +1,5 @@
 #!/bin/bash
+# Depreciated - remove this file from the /etc/systemd/ directory
 
 cat > /etc/systemd/system/tezos-endorser.service << EOF
 # The Tezos Endorser service (part of systemd)

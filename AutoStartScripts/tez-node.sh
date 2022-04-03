@@ -13,10 +13,10 @@ After           = network-online.target
 User            = pi
 Group		        = pi
 WorkingDirectory= /home/pi/
-ExecStart	      = /home/pi/tezos/tezos-node run --net-addr 127.0.0.1:9732 --rpc-addr 127.0.0.1:8732 --data-dir ~/tezos-node
+ExecStart	      = /home/pi/tezos/tezos-node run --net-addr 127.0.0.1:9732 --rpc-addr 127.0.0.1:8732 --log-output tezos.log &
 Restart         = always
 
 [Install]
 WantedBy	  = multi-user.target
-RequiredBy	= tezos-baker.service tezos-endorser.service tezos-accuser.service
+RequiredBy	= tezos-baker.service tezos-accuser.service
 EOF
