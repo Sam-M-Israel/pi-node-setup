@@ -14,7 +14,7 @@ User            = pi
 Group		        = pi
 WorkingDirectory= /home/pi/
 ExecStartPre	  = /bin/sleep 1
-ExecStart       = /home/pi/tezos/tezos-accuser-012-Psithaca run && export TEZOS_LOG="* -> debug"
+ExecStart       = /home/pi/tezos/tezos-accuser-013-PtJakart run
 Restart         = always
 
 [Install]
