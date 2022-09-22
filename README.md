@@ -83,20 +83,19 @@ Please note, while you are baking, you are required to keep your ledger wallet u
 1. Unlock your ledger and navigate to the Tezos Baking app
 2. Open a new terminal and navigate to the `tezos` directory
 3. The next command you will run has to variables you need to check on before you run it.
-   1. main-chain-id` - it shouldn't ever change but to be safe, go to [here](https://tzstats.com/docs/api#tezos-api) and search for it. You are looking for the X-Network-ID:  
+   1. main-chain-id` - it shouldn't ever change but to be safe, go [here](https://tzstats.com/docs/api#tezos-api) and search for it. You are looking for the X-Network-ID:  
    ![](./images/mainchainid.png)
    2. `ledger_pi` should be replaced with the name you gave your bakery earlier on.
 4. Once in the tezos directory, run:  
 `./tezos-client setup ledger to bake for ledger_pi --main-chain-id NetXdQprcVkpaWU`  
 This command will register your ledger and Pi as a bakery.
 
-
 ## Getting the Bakery up and running
 Here we will be running multiple scripts, each in separate terminals. They will get the bakery, endorser, and accuser up and running. If your node still isn't bootstrapped, don't worry. It usually takes a couple of hours, depending on the snapshot. Once your node is bootstrapped, you should proceed with the following:
 1. Firstly, check and make sure that your node is still running. If not, re-run `./node_start.sh`
 2. Open up 2 more terminals/CLIs that you will have dedicated for the following 2 commands (I like to name the terminals/CLIs after their specified command: **Bakery**, **Accuser**), one in each.
-3. Run: ```cd tezos && ./tezos-baker run with local node ~/.tezos-node ledger_pi``` (where `ledger_pi` is replaced with the name you gave your bakery)
-4. Run: ```cd tezos && ./tezos-accuser run``` (where `ledger_pi` is replaced with the name you gave your bakery)
+3. Run: ```cd tezos && ./tezos-baker run with local node ~/.tezos-node ledger_pi --liquidity-baking-toggle-vote <on|off|pass>``` (where: `ledger_pi` is replaced with the name you gave your bakery,`--liquidity-baking-toggle-vote` is passed the value `<on|off|pass>` which you can read more about [here](https://tezos.gitlab.io/kathmandu/liquidity_baking.html))
+4. Run: ```cd tezos && ./tezos-accuser run``` (where: `ledger_pi` is replaced with the name you gave your bakery)
 5. If your node is bootstrapped (fully synced up) then you should see outputs of baking printouts and `accuser activated` from their respective terminals. If not and your node **IS** bootstrapped, then try to debug and make sure you did all the steps correctly and in order. If you encounter any issues, feel free to reach out for help in the Tezos Bakers slack (link at the bottom) 
 6. Yalla, you are all good to bake.
 
