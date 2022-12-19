@@ -14,7 +14,7 @@ User            = pi
 Group		        = pi
 WorkingDirectory= /home/pi/
 ExecStartPre	  = /bin/sleep 1
-ExecStart       = /home/pi/tezos/tezos-accuser-014-PtKathma run
+ExecStart       = /home/pi/tezos/octez-accuser-PtLimaPt run
 Restart         = always
 
 [Install]

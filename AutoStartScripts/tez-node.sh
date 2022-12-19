@@ -13,7 +13,7 @@ After           = network-online.target
 User            = pi
 Group		        = pi
 WorkingDirectory= /home/pi/
-ExecStart	      = /home/pi/tezos/tezos-node run --net-addr 127.0.0.1:9732 --rpc-addr 127.0.0.1:8732
+ExecStart	      = /home/pi/tezos/octez-node run --net-addr 127.0.0.1:9732 --rpc-addr 127.0.0.1:8732
 Restart         = always
 
 [Install]
